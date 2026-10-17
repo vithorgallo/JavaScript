@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analisador de Numero</title>
+</head>
+<body>
+    <main>
+        <input type="number" name="txtn1" id="txtn1">
+        <input type="button" value="analisar" onclick="analisar()">
+        <div id="rspt1"></div>
+        <div id="rspt2"></div>
+        <div id="rspt3"></div>
+    </main>
+
+    <script>
+        function analisar(){
+            var n1 = document.querySelector(`input#txtn1`)
+            n1 = Number(n1.value)
+            var dobro = n1 * 2
+            var triplo = n1 * 3
+            var raizQuadrada = Math.sqrt(n1)
+            rspt1.innerHTML = (`O dobro do numero ${n1} é ${dobro}`)
+            rspt2.innerHTML = (`O triplo do numero ${n1} é ${triplo}`)
+            rspt3.innerHTML = (`A raiz quadrada do numero ${n1} é ${raizQuadrada}`)
+        }
+    </script>
+</body>
+</html>
