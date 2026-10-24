@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Radar Velocidade</title>
+</head>
+<body>
+    <h1>Medidor de Velocidade do DETRAN</h1>
+    Digite a Velocidade:<input type="number" name="txtvel" id="txtvel">Km/h
+    <input type="button" value="verificar" onclick="calcular()">
+    <div id="res"></div>
+
+    <script>
+        function calcular(){
+            var vel = document.querySelector(`input#txtvel`)
+            var res = document.querySelector(`div#res`)
+            vel = Number(vel.value)
+            if (vel > 60){
+                res.innerHTML = (`Você passou o limite de velocidade! MULTADO!`)
+            } else {
+                res.innerHTML =(`Você está dentro do limite. Parabéns!`)
+            }
+        }
+    </script>
+</body>
+</html>

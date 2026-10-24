@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora</title>
+    <style>
+        body {
+            background-image: linear-gradient(
+            90deg, #000000 45%, #0b006e            );
+        }
+
+        main{
+            position: relative;
+            margin: auto;
+            background-color: blue;
+            width: 400px;
+            height: 500px;
+            border-radius: 10px;
+        }
+
+        main > h1{
+            text-align: center;
+            background-color: #0b006e;
+            padding: 15px;
+            border-radius: 10px 10px 0px 0px;
+            color: white;
+        }
+
+        #txtn1, #txtn2{
+            background-color: #0b006e;
+            color:white;
+            width: 300px;
+            padding: 20px;
+            font-size: 20px;
+            text-align: center;
+            border-radius: 10px;
+            border: 3px solid rgb(25, 115, 175);
+        }
+
+        #txtOperacao, #calcular{
+            background-color: #0b006e;
+            width: 60px;
+            height: 60px;
+            border: 3px solid rgb(25, 115, 175);
+            border-radius: 10px;
+            font-size: 30px;
+            color:white;
+            margin: 0px 140px;
+            text-align: center;
+        }
+
+        .container {
+            margin: 10px 28px;     
+        }
+
+        #res {
+            background-color: #0b006e;
+            color: white;
+            line-height: 70px;
+            width: 250px;
+            height: 70px;
+            text-align: center;
+            font-size: 20px;
+            border-radius: 15px;
+            border: 3px solid rgb(25, 115, 175);
+            margin: 0px 75px;
+        }
+
+    </style>
+</head>
+<body>
+    <main>
+        <h1>Calculadora</h1>
+        <div class="container"><input type="number" name="txtn1" id="txtn1" placeholder="Digite o primeiro número"></div>
+        <div class="container"><input id="txtOperacao"></div>
+        <div class="container"><input type="number" name="txtn2" id="txtn2" placeholder="Digite o segundo número"></div>
+        <div class="container"><input type="button" id="calcular" value="=" onclick="calcular()"></div>
+        <div id="res"></div>
+    </main>
+
+    <script>
+        function calcular(){
+            var txn1 = document.querySelector(`input#txtn1`)
+            var op = document.querySelector(`input#txtOperacao`)
+            var txn2 = document.querySelector(`input#txtn2`)
+            var res = document.querySelector(`div#res`)
+            n1 = Number(txn1.value)
+            n2 = Number(txn2.value)
+            op = op.value
+            var resultado = 0
+            if(op === `+`){
+                resultado = n1 + n2
+                res.innerHTML = (`${resultado}`)
+            } else if(op === `-`){
+                resultado = n1 - n2
+                res.innerHTML = (`${resultado}`)
+            } else if(op === "*"){
+                resultado = n1 * n2
+                res.innerHTML = (`${resultado}`)
+            } else if(op === "/"){
+                if (n2 === 0){
+                    res.innerHTML = (`Não é possivel dividir ${n1} por 0`)
+                } else {
+                resultado = n1 / n2
+                res.innerHTML = (`${resultado}`)
+                }
+            }
+        }
+    </script>
+</body>
+</html>
